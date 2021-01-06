@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
-import seaborn as sns
 
 def superiorWineVisuals():
     wine = pd.read_csv('/Users/melen/Desktop/PORTFOLIO/WineReview_Project/Data/winemag-data-130k.csv')
@@ -28,7 +27,7 @@ def superiorWineVisuals():
     ax1 = plt.subplot(2,2,1)
     ax1.pie([interval1, interval2,interval3, interval4], 
             explode=(0.6,0,0,0),autopct='%.2f%%', colors=colors, shadow=True)
-    ax1.set_title('Winde Industry Quality', color='white', weight='bold')
+    ax1.set_title('Wine Industry Quality', color='white', weight='bold')
     ax1.legend(pie_labels1, loc='upper right', bbox_to_anchor=(1.2,1), fontsize=8.5, title='Ranking[Points]')
 
     # Pie chart Visual #2 
