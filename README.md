@@ -36,6 +36,15 @@
  ![](https://raw.githubusercontent.com/Adan-Macias/WineReview_Project/master/Data_Visuals/wine_quality.png)
  
  # Data visualization: Top 25 Wine Variation With Points/Price Means
+ ### Scatter Plot: 
+   * Provides data visual of filtered wine variations(top 25 in dataset).
+   * Wine variations are plotted along volume/amount present in wine dataset and therefore assuming most popular reviewed variations.
+ ### Scatter Plot 2: 
+   * Provides wine point averages for each wine variety for top 25 reviewed wines.
+   * This chart can provide assistance with wine variety choices based on wine ratings.
+ ### Bar Chart: 
+   * Provides the average price as per wine variety and clearly shows patterns between points and price.
+   * This data can be beneficial to wine lovers who desire to experiment and take rating/prices as influential factors in buying decisions.
  
  ![](https://raw.githubusercontent.com/Adan-Macias/WineReview_Project/master/Data_Visuals/top25_variations.png)
 
