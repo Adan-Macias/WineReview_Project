@@ -27,7 +27,7 @@ def superiorWineVisuals():
     ax1 = plt.subplot(2,2,1)
     ax1.pie([interval1, interval2,interval3, interval4], 
             explode=(0.6,0,0,0),autopct='%.2f%%', colors=colors, shadow=True)
-    ax1.set_title('Wine Industry Quality', color='white', weight='bold')
+    ax1.set_title('Wine Quality Portions', color='white', weight='bold')
     ax1.legend(pie_labels1, loc='upper right', bbox_to_anchor=(1.2,1), fontsize=8.5, title='Ranking[Points]')
 
     # Pie chart Visual #2 
@@ -71,7 +71,7 @@ def superiorWineVisuals():
     ax4.axvline(pointsMean, color='red', linewidth=4, label='Mean')
     ax4.tick_params(axis='x', colors='white')
     ax4.tick_params(axis='y', colors='white')
-    ax3.set_xlabel('Points', color='white')
+    ax4.set_xlabel('Points', color='white')
     ax4.grid(axis='y', color='white')
     ax4.set_facecolor('black')
     legend1 = ax4.legend((patches[15], patches[10], patches[5], patches[0]), (pie_labels1),
@@ -79,14 +79,77 @@ def superiorWineVisuals():
     legend2 = ax4.legend(loc='lower right', bbox_to_anchor=(1,.6))
     ax4.set_xlabel('Wine Rating', color='white')
     ax4.add_artist(legend1)
-    
     plt.tight_layout()
     plt.savefig('C:/Users/melen/Desktop/PORTFOLIO/WineReview_Project/Data_Visuals/wine_quality.png', bbox_inches='tight')
 
+def winePrice():
+    wine = pd.read_csv('/Users/melen/Desktop/PORTFOLIO/WineReview_Project/Data/winemag-data-130k.csv')
+    # Dropping Null values located in price column
+    wine = wine.dropna(subset=['price'])
 
+    # Extract target varieties and filter
+    bestVariations = wine['variety'].value_counts().head(24).index.tolist()
+    bestVariations_counts = wine['variety'].value_counts().head(24).tolist()
+    bestVariations_counts.sort()
+    
+    # Data Visual #1
+    plt.figure(figsize=(12,11),facecolor="black")
+    ax1 = plt.subplot2grid((10,2), (0,0), rowspan=7, colspan=2)
+    ax1.set_title('Top 25 Wine Variations By Volume', color='white', weight='bold')
+    ax1.scatter(y=bestVariations, x=bestVariations_counts, s=80, color='maroon')
+    ax1.grid(axis='y', color='white', linestyle='--', alpha=0.1)
+    ax1.tick_params(axis='x', colors='white')
+    ax1.tick_params(axis='y', colors='white')
+    ax1.set_xlabel('Volume', color='white', weight='bold')
+    ax1.set_ylabel('Wine Variation', color='white', weight='bold')
+    ax1.set_facecolor('black')
+
+    
+    # Extracting top 25 variety data and calculating means per points/price
+    variationsPriceMean = []
+    variationsPointMean = []
+    for variety in bestVariations:
+        x = wine[(wine.variety == variety) & (wine.price > 0)]
+        meanPrice = x.price.mean()
+        meanPrice = round(meanPrice,2)
+        
+        meanPoints = x.points.mean()
+        meanPoints = round(meanPoints,0)
+
+        variationsPriceMean.append(meanPrice)
+        variationsPointMean.append(meanPoints)
+
+    # Data Visual #2
+    ax2 = plt.subplot2grid((10,2), (7,0), rowspan=3, colspan=1)
+    variationsPointMean.sort()
+    ax2.scatter(bestVariations, variationsPointMean, color='blue', alpha=0.7, linewidth=3)
+    ax2.grid(axis='x', color='white', linestyle='--', alpha=0.1)
+    ax2.grid(axis='y', color='white', linestyle='solid', alpha=0.1)
+    ax2.tick_params(axis='x', colors='white', rotation=90)
+    ax2.tick_params(axis='y', colors='white')
+    ax2.set_xlabel('Wine Variety', color='white', weight='bold')
+    ax2.set_ylabel('Points Avg ', color='white', weight='bold')
+    ax2.set_facecolor('black')
+
+    # Data Visual #3
+    ax3 = plt.subplot2grid((10,2), (7,1), rowspan=3, colspan=1)
+    variationsPriceMean.sort()
+    ax3.vlines(x=bestVariations, ymin=0, ymax=variationsPriceMean, color='green', alpha=0.7, linewidth=5)
+    ax3.grid(axis='y', color='white', linestyle='--', alpha=0.1)
+    arrange_yticks = np.arange(0, 100, 20)
+    ax3.tick_params(axis='x', colors='white', rotation=90)
+    ax3.tick_params(axis='y', colors='white')
+    ax3.set_yticks(arrange_yticks)
+    ax3.set_xlabel('Wine Variety', color='white', weight='bold')
+    ax3.set_ylabel('Price Avg', color='white', weight='bold')
+    ax3.set_facecolor('black')
+    plt.tight_layout()
+    plt.savefig('C:/Users/melen/Desktop/PORTFOLIO/WineReview_Project/Data_Visuals/top25_variations.png', bbox_inches='tight')
+    
 def main():
     # Invoke functions
     superiorWineVisuals()
+    winePrice()
 
 # Invoke main  
 main()
