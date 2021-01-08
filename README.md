@@ -2,6 +2,7 @@
 - Provides analysis on wine review data containing close to 130k datapoints
 - Purpose of this project focuses on superior wine information based on a grading scale 80 - 100
 - Provides various data visualizations on superior wine interval along with a distribution of all intervals as per wine points
+- Demonstrates Top 25 wine varieties reviewed as per target dataset and calculates averages.
 - Visuals are auto saved after every execution and contained in a single subplot grid.
 
 
