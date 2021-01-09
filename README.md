@@ -14,7 +14,7 @@
      
  # Dataframe filtering:
   - Scale intervals are generated with Dataframe boolean conditions.
-  - Intervals are specific to each wine rating such as Superior[95-100], Outstanding[90-94], Very Good[85-90], and Good[80-84].
+  - Intervals are specific to each wine rating such as **Superior[95-100], Outstanding[90-94], Very Good[85-90], and Good[80-84].**
   - This process isolates the superior quality interval in overall wine 130k dataset which remains the target data.
  
  # Data visualization: Superior Wine Analysis and Overall Quality Distribution
