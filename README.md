@@ -21,23 +21,23 @@
  ### Pie Chart 1:
    * Overall wine dataset is analyzed for wine point intervals and each interval is then isolated.
    * Wine intervals contains different pools or amounts as per ranking.
-   * Results in 1.86% of total wine data to have superior wine and most of the wine industry containing "Very Good" at 52.70%
+   * Results show 1.86% of total wine data to have a superior/classic rating, while most of the wine review dataset containing Very Good[85-90] at 52.70%
  ### Pie Chart 2:
    * This chart is a continuation of Pie Chart 1 and provides more details on superior wine(1.86%).
-   * The main sources of superior wine production is displayed at interval 95 - 100 on chosen dataset.
-   * Results demonstrate U.S provides largest portion of superior wine with 41.55% while Australia is the lowest at 1.97%
+   * The main countries of superior/classic wine production is displayed at interval 95 - 100 on chosen dataset.
+   * Results demonstrate U.S being largest producer of superior/classic wine with 41.55%, while Australia being the lowest at 1.97%
  ### Bar Chart:   
-   * A micro level of the 1.86% is demonstrated where superior wine is prodiced by province.
+   * A micro level of the 1.86% is demonstrated where superior wine is produced by province.
    * Results demonstrate a very high volume of superior wine with a source/province of California
  ### Histogram:
-   * A distribution of all wine intervals are shown in this visual which provides clear view of wine ratings in the wine industry.
-   * A mean is provided where the mos common rating in the overall wine industry is 88 points.
+   * A distribution of all wine intervals are shown in this visual which provides clear view of wine ratings in the wine dataset.
+   * A mean is provided where the most common rating in the target dataset is 88 points.
    * Intervals (85-84) and (90-94) contain the largest portions of the wine dataset while superior remains very low at 1.86%.
  
  ![](https://raw.githubusercontent.com/Adan-Macias/WineReview_Project/master/Data_Visuals/wine_quality.png)
  
  # Data visualization: Top 25 Wine Variation With Points/Price Means
- ### Scatter Plot: 
+ ### Scatter Plot 1: 
    * Provides data visual of filtered wine variations(top 25 in dataset).
    * Wine variations are plotted along volume/amount present in wine dataset and therefore assuming most popular reviewed variations.
  ### Scatter Plot 2: 
